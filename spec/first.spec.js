@@ -13,4 +13,9 @@ describe('first()', () => {
         expect(first(false)).to.eql(expected);
         expect(first('abc')).to.eql(expected);
     });
+    it('returns the first item of an array if no end value argument', () => {
+        var actual = first([1, 2, 3]);
+        var expected = 1;
+        expect(actual).to.equal(expected);
+    });
 });
