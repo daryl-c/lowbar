@@ -11,9 +11,12 @@ describe('identity()', () => {
         expect(identity(true)).to.equal(true);
     });
     it('returns same argument it is called with for non-primitives', () => {
-        var arr = [1, 2, 3];
-        var obj = {a: 1, b: 2};
+        const arr = [1, 2, 3];
+        const obj = {a: 1, b: 2};
         expect(identity(arr)).to.equal(arr);
         expect(identity(obj)).to.equal(obj);
+    });
+    it('returns first argument if called with several arguments', () => {
+        expect(identity('a', 'b', 'c')).to.equal('a');
     });
 });
