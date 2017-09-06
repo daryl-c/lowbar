@@ -18,4 +18,9 @@ describe('first()', () => {
         var expected = 1;
         expect(actual).to.equal(expected);
     });
+    it('returns the first elements of an array up to the end value', () => {
+        var actual = first([1, 2, 3, 4, 5], 3);
+        var expected = [1, 2, 3];
+        expect(actual).to.eql(expected);
+    });
 });
