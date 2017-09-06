@@ -17,4 +17,9 @@ describe('first()', () => {
         var expected = 3;
         expect(actual).to.equal(expected);
     });
+    it('returns undefined if list is undefined and no end value argument', () => {
+        var actual = last([]);
+        var expected = undefined;
+        expect(actual).to.equal(expected);
+    });
 });
