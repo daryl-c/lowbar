@@ -23,4 +23,9 @@ describe('first()', () => {
         var expected = [1, 2, 3];
         expect(actual).to.eql(expected);
     });
+    it('returns whole array if end value is bigger than array length', () => {
+        var actual = first([1, 2, 3, 4, 5], 10);
+        var expected = [1, 2, 3, 4, 5];
+        expect(actual).to.eql(expected);
+    });
 });
