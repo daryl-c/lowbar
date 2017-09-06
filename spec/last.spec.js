@@ -12,14 +12,19 @@ describe('first()', () => {
         expect(last(true)).to.eql(expected);
         expect(last(false)).to.eql(expected);
     });
-    it('returns the last item of an array if no end value argument', () => {
+    it('returns the last item of an array if no amount value argument', () => {
         var actual = last([1, 2, 3]);
         var expected = 3;
         expect(actual).to.equal(expected);
     });
-    it('returns undefined if list is undefined and no end value argument', () => {
+    it('returns undefined if list is undefined and no amount value argument', () => {
         var actual = last([]);
         var expected = undefined;
         expect(actual).to.equal(expected);
+    });
+    it('returns an array containing last elements list from amount value to end of array', () => {
+        var actual = last([1, 2, 3, 4, 5], 2);
+        var expected = [4, 5];
+        expect(actual).to.eql(expected);
     });
 });
