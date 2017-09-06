@@ -22,9 +22,14 @@ describe('first()', () => {
         var expected = undefined;
         expect(actual).to.equal(expected);
     });
-    it('returns an array containing last elements list from amount value to end of array', () => {
+    it('returns an array containing last n elements in list according to amount value', () => {
         var actual = last([1, 2, 3, 4, 5], 2);
         var expected = [4, 5];
+        expect(actual).to.eql(expected);
+    });
+    it('returns an array of all elements if amount value is bigger than list length', () => {
+        var actual = last([1, 2, 3, 4, 5], 8);
+        var expected = [1, 2, 3, 4, 5];
         expect(actual).to.eql(expected);
     });
 });
