@@ -37,4 +37,27 @@ describe('first()', () => {
         var expected = [1, 2, 3, 4, 5];
         expect(actual).to.eql(expected);
     });
+
+    it('returns the last item of a string if no amount value argument', () => {
+        var actual = last('hello');
+        var expected = 'o';
+        expect(actual).to.equal(expected);
+    });
+    it('returns undefined if list is empty string and no amount value argument', () => {
+        var actual = last('');
+        var expected = undefined;
+        expect(actual).to.equal(expected);
+    });
+
+    it('returns an array containing last n elements of string according to amount value', () => {
+        var actual = last('testing', 2);
+        var expected = ['n', 'g'];
+        expect(actual).to.eql(expected);
+    });
+
+    it('returns an array of all elements if amount value is bigger than string length', () => {
+        var actual = last('one', 5);
+        var expected = ['o', 'n', 'e'];
+        expect(actual).to.eql(expected);
+    });
 });
