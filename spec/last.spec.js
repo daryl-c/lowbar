@@ -12,4 +12,9 @@ describe('first()', () => {
         expect(last(true)).to.eql(expected);
         expect(last(false)).to.eql(expected);
     });
+    it('returns the last item of an array if no end value argument', () => {
+        var actual = last([1, 2, 3]);
+        var expected = 3;
+        expect(actual).to.equal(expected);
+    });
 });
