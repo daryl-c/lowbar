@@ -93,4 +93,17 @@ describe('each()', () => {
             each(str, checkContext, context);
         });
     });
+    it('returns the list argument if an iteratee is provided as a function', () => {
+        const arr = [1, 2, 3, 4];
+        const obj = {a: 1, b: 2};
+        const str = 'Test';
+        const num = 123;
+        const nullArg = null;
+        const noOp = () => {};
+        expect(each(arr, noOp)).to.equal(arr);
+        expect(each(obj, noOp)).to.equal(obj);
+        expect(each(str, noOp)).to.equal(str);
+        expect(each(num, noOp)).to.equal(num);
+        expect(each(nullArg, noOp)).to.equal(nullArg);
+    });
 });
