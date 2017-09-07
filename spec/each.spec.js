@@ -64,4 +64,17 @@ describe('each()', () => {
             each(obj, checkContext, context);
         });
     });
+    describe('strings', () => {
+        let str;
+        beforeEach(() => {
+            str = 'Test String';
+        });
+        it('calls the iteratee for every char in string', () => {
+            const fakeFn = spy();
+            each(str, fakeFn);
+            const expected = 11;
+            const actual = fakeFn.callCount;
+            expect(actual).to.equal(expected);
+        });
+    });
 });
