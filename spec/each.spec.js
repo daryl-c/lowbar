@@ -47,5 +47,14 @@ describe('each()', () => {
             const actual = fakeFn.callCount;
             expect(actual).to.equal(expected);
         });
+        it('invokes iteratee with the item, it\'s index and the object', () => {
+            const fakeFn = spy();
+            each(obj, fakeFn);
+            Object.keys(obj).forEach(key => {
+                const actual = fakeFn.calledWith(obj[key], key, obj);
+                const expected = true;
+                expect(actual).to.equal(expected);
+            });
+        });
     });
 });
