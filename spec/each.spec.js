@@ -76,5 +76,14 @@ describe('each()', () => {
             const actual = fakeFn.callCount;
             expect(actual).to.equal(expected);
         });
+        it('invokes iteratee with the char, it\'s index and the string', () => {
+            const fakeFn = spy();
+            each(str, fakeFn);
+            str.split('').forEach((char, i) => {
+                const actual = fakeFn.calledWith(char, i, str);
+                const expected = true;
+                expect(actual).to.equal(expected);
+            });
+        });
     });
 });
