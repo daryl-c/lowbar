@@ -1,7 +1,7 @@
 const {last} = require('../lib');
 const {expect} = require('chai');
 
-describe('first()', () => {
+describe('last()', () => {
     it('should be a function', () => {
         expect(last).to.be.a('function');
     });

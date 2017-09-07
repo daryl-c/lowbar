@@ -2,7 +2,7 @@ const {each} = require('../lib');
 const {expect} = require('chai');
 const {spy} = require('sinon');
 
-describe('first()', () => {
+describe('each()', () => {
     it('should be a function', () => {
         expect(each).to.be.a('function');
     });
@@ -23,6 +23,14 @@ describe('first()', () => {
                 const expected = true;
                 expect(actual).to.equal(expected);
             });
+        });
+        it('invokes iteratee with a different context if given', () => {
+            const context = {};
+            const list = [1, 2, 3, 4, 5];
+            function checkContext() {
+                expect(this).to.equal(context);
+            }
+            each(list, checkContext, context);
         });
     });
 });
