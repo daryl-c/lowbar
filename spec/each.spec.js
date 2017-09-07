@@ -56,5 +56,12 @@ describe('each()', () => {
                 expect(actual).to.equal(expected);
             });
         });
+        it('invokes iteratee with a different context if given', () => {
+            const context = {};
+            function checkContext() {
+                expect(this).to.equal(context);
+            }
+            each(obj, checkContext, context);
+        });
     });
 });
