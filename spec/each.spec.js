@@ -33,4 +33,19 @@ describe('each()', () => {
             each(list, checkContext, context);
         });
     });
+    describe('objects', () => {
+        let obj;
+        beforeEach(() => {
+            obj = {
+                a: 1, b: 2, c: 3, d: 4, e: 5
+            };
+        });
+        it('calls the iteratee for every item in an object', () => {
+            const fakeFn = spy();
+            each(obj, fakeFn);
+            const expected = 5;
+            const actual = fakeFn.callCount;
+            expect(actual).to.equal(expected);
+        });
+    });
 });
