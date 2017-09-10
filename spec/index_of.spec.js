@@ -17,4 +17,10 @@ describe('indexOf()', () => {
         const actual = indexOf(arr, 2);
         expect(actual).to.equal(expected);
     });
+    it('should return -1 if value is not present in the array', () => {
+        const arr = [1, 2, 3, 4, 5];
+        const expected = -1;
+        const actual = indexOf(arr, 9);
+        expect(actual).to.equal(expected);
+    });
 });
