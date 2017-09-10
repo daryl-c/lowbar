@@ -1,4 +1,4 @@
-const {each} = require('../lib');
+const {each} = require('../../lib');
 const {expect} = require('chai');
 const {spy} = require('sinon');
 

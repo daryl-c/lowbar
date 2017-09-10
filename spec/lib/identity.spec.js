@@ -1,5 +1,5 @@
 const {expect} = require('chai');
-const {identity} = require('../lib');
+const {identity} = require('../../lib');
 
 describe('identity()', () => {
     it('should be a function', () => {

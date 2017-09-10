@@ -1,4 +1,4 @@
-const {first} = require('../lib');
+const {first} = require('../../lib');
 const {expect} = require('chai');
 
 describe('first()', () => {

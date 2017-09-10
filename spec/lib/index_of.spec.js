@@ -1,4 +1,4 @@
-const {indexOf} = require('../lib');
+const {indexOf} = require('../../lib');
 const {expect} = require('chai');
 
 describe('indexOf()', () => {
