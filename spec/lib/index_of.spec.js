@@ -42,4 +42,16 @@ describe('indexOf()', () => {
         expect(actualUnsorted).to.equal(expectedUnsorted);
         expect(actualSorted).to.equal(expectedSorted);
     });
+    it('returns the index of a given character within a string', () => {
+        const str = 'hello';
+        const expected = 2;
+        const actual = indexOf(str, 'l');
+        expect(actual).to.equal(expected);
+    });
+    it('returns -1 if given character is not it string', () => {
+        const str = 'hello';
+        const expected = -1;
+        const actual = indexOf(str, 'z');
+        expect(actual).to.equal(expected);
+    });
 }); 
