@@ -23,10 +23,23 @@ describe('indexOf()', () => {
         const actual = indexOf(arr, 9);
         expect(actual).to.equal(expected);
     });
-    it('starts seach from the position given as third argument', () => {
+    it('starts search from the position given as third argument', () => {
         const arr = [1, 2, 3, 2, 5];
         const expected = 3;
         const actual = indexOf(arr, 2, 2);
         expect(actual).to.equal(expected);
     });
-});
+    it('uses binary search if true is passed as 3rd argument', () => {
+        var unsortedArr = [1, 2, 7, 6, 6, 8, 8, 9, 9];
+        var sortedArr = unsortedArr.slice().sort();
+
+        const expectedUnsorted = -1;
+        const expectedSorted = 4;
+
+        const actualUnsorted = indexOf(unsortedArr, 7, true);
+        const actualSorted = indexOf(sortedArr, 7, true);
+
+        expect(actualUnsorted).to.equal(expectedUnsorted);
+        expect(actualSorted).to.equal(expectedSorted);
+    });
+}); 
