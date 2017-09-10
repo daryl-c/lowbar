@@ -49,4 +49,29 @@ describe('filter()', () => {
             filter(input, testContext, context);
         });
     });
+    describe('objects', () => {
+        it('invokes the predicate for every item in the object', () => {
+            const input = {
+                a: 1, 
+                b: 'a', 
+                c: 2
+            };
+            const spy = sinon.spy();
+            const expected = Object.keys(input).length;
+            filter(input, spy);
+            expect(spy.callCount).to.equal(expected);
+        });
+        it('invokes predicate with each item, ', () => {
+            const input = {
+                a: 1, 
+                b: 'a', 
+                c: 2
+            };
+            const spy = sinon.spy();
+            filter(input, spy);
+            Object.keys(input).forEach((key) => {
+                expect(spy.calledWith(input[key], key, input)).to.be.true;
+            });
+        });
+    });
 });
