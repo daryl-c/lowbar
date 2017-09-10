@@ -13,6 +13,11 @@ describe('filter()', () => {
         expect(actual).to.be.an('array');
         expect(actual).to.not.equal(input);
     });
+    it('returns empty array if predicate is not a function', () => {
+        const input = [1, 2, 3];
+        const actual = filter(input, 'not a function');
+        expect(actual).to.eql([]);
+    });
     describe('arrays', () => {
         it('invokes the predicate for every item in array', () => {
             const input = ['a', 'b', 'c'];
