@@ -28,5 +28,12 @@ describe('filter()', () => {
                 expect(spy.calledWith(letter, i, input)).to.be.true;
             });
         });
+        it('returns an array of all items where predicate is true', () => {
+            const input = [1, 2, 3, 4, 5, 6];
+            const isEven = (num) => !(num % 2);
+            const actual = filter(input, isEven);
+            const expected = [2, 4, 6];
+            expect(actual).to.eql(expected);
+        });
     });
 });
