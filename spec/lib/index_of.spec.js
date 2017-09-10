@@ -54,4 +54,10 @@ describe('indexOf()', () => {
         const actual = indexOf(str, 'z');
         expect(actual).to.equal(expected);
     });
+    it('returns -1 if other data types are passed', () => {
+        expect(indexOf(1, 1)).to.equal(-1);
+        expect(indexOf(null, 1)).to.equal(-1);
+        expect(indexOf(undefined, 'u')).to.equal(-1);
+        expect(indexOf({a: 1, b: 2}, 2)).to.equal(-1);
+    });
 }); 
