@@ -73,5 +73,16 @@ describe('filter()', () => {
                 expect(spy.calledWith(input[key], key, input)).to.be.true;
             });
         });
+        it('returns an array of all values where predicate is true', () => {
+            const input = {
+                a: 1, 
+                b: 'a', 
+                c: 2
+            };
+            const isNumber = (item) => typeof item === 'number';
+            const actual = filter(input, isNumber);
+            const expected = [1, 2];
+            expect(actual).to.eql(expected);
+        });
     });
 });
