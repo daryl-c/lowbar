@@ -35,5 +35,13 @@ describe('filter()', () => {
             const expected = [2, 4, 6];
             expect(actual).to.eql(expected);
         });
+        it('invokes the predicate with a context if provided', () => {
+            const input = [1, 2, 3, 4, 5, 6];
+            const context = {};
+            const testContext = function () {
+                expect(this).to.equal(context);
+            };
+            filter(input, testContext, context);
+        });
     });
 });
