@@ -23,4 +23,10 @@ describe('indexOf()', () => {
         const actual = indexOf(arr, 9);
         expect(actual).to.equal(expected);
     });
+    it('starts seach from the position given as third argument', () => {
+        const arr = [1, 2, 3, 2, 5];
+        const expected = 3;
+        const actual = indexOf(arr, 2, 2);
+        expect(actual).to.equal(expected);
+    });
 });
